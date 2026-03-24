@@ -51,7 +51,7 @@ KAISER_BETA = 14.0
 GRID_FREQUENCY = 50.0
 TARGET_HARMONICS = [1]      # 1=50Hz, 2=100Hz, 3=150Hz
 SEARCH_BANDWIDTH_HZ = 0.5
-INTERPOLATION = "parabolic"    # parabolic, gaussian, none
+INTERPOLATION = "none"    # parabolic, gaussian, none
 SNR_NOISE_BAND = (1.0, 5.0)
 SNR_MIN = 1.5
 
