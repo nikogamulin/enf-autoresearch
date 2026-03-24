@@ -44,7 +44,7 @@ CUT_CLUSTER_RADIUS_S = 2.0
 MIN_SEGMENT_DURATION_S = 20.0
 
 # --- ENF Extraction ---
-FFT_WINDOW_S = 8.0
+FFT_WINDOW_S = 4.0
 FFT_HOP_S = 1.0
 FFT_WINDOW_TYPE = "hann"       # hann, hamming, blackman, kaiser
 KAISER_BETA = 14.0
