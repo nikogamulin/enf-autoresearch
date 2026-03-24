@@ -1,0 +1,12 @@
+{
+  "JO03_oberstar_deep_state.wav": {
+    "known_date": "2025-10-04",
+    "known_time": "11:14",
+    "confidence": "indicative",
+    "notes": "Oberstar deep state. Segment 4 (185-238s) has 5/10 top matches from 2025. Best 2025 match: 4 Oct 2025, 11:14, r=0.952. Joint analysis with JO02 shows 2025-04-20 as 3rd best day (z=3.34). Original individual ENF best match was 2023-02-14 (z=3.16) but 2025 cannot be excluded. Using 2025-10-04 as target for optimization — if ENF pipeline can reliably surface this date, it validates the 2025 hypothesis.",
+    "concatenated": true,
+    "duration_s": 266.8,
+    "source": "anti-corruption2026.com",
+    "same_day_group": "oberstar_dars"
+  }
+}
