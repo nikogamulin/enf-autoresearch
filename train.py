@@ -49,7 +49,7 @@ FFT_HOP_S = 1.0
 FFT_WINDOW_TYPE = "hann"       # hann, hamming, blackman, kaiser
 KAISER_BETA = 14.0
 GRID_FREQUENCY = 50.0
-TARGET_HARMONICS = [1, 2]      # 1=50Hz, 2=100Hz, 3=150Hz
+TARGET_HARMONICS = [1]      # 1=50Hz, 2=100Hz, 3=150Hz
 SEARCH_BANDWIDTH_HZ = 0.5
 INTERPOLATION = "parabolic"    # parabolic, gaussian, none
 SNR_NOISE_BAND = (1.0, 5.0)
