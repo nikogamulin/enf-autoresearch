@@ -1,0 +1,94 @@
+============================================================
+ENF AutoResearch — Autonomous Optimization Loop
+Started: 2026-03-24 21:44:44
+Experiments queued: 48
+============================================================
+
+[0/48] BASELINE
+  MRR: 0.000000 | Time: 31.6s
+
+[1/48] 100Hz only
+  MRR: 0.000000 (best: 0.000000) | Time: 30.0s → discard
+
+[2/48] 50Hz only
+  MRR: 0.011236 (best: 0.000000) | Time: 30.4s → KEEP ✓
+
+[3/48] 50+100+150Hz
+  MRR: 0.000000 (best: 0.011236) | Time: 32.0s → discard
+
+[4/48] FFT window 8s
+  MRR: 0.027778 (best: 0.011236) | Time: 35.1s → KEEP ✓
+
+[5/48] FFT window 32s
+  MRR: 0.000000 (best: 0.027778) | Time: 20.0s → discard
+
+[6/48] FFT window 4s
+  MRR: 1.000000 (best: 0.027778) | Time: 37.8s → KEEP ✓
+
+[7/48] search bandwidth 1.0Hz
+  MRR: 0.050000 (best: 1.000000) | Time: 34.6s → discard
+
+[8/48] search bandwidth 0.2Hz
+  CRASH | Time: 4.6s
+
+[9/48] blackman window
+  CRASH | Time: 18.8s
+
+[10/48] hamming window
+  MRR: 0.014925 (best: 1.000000) | Time: 34.9s → discard
+
+[11/48] kaiser window
+  MRR: 0.000000 (best: 1.000000) | Time: 35.9s → discard
+
+[12/48] derivative correlation
+  MRR: 0.027027 (best: 1.000000) | Time: 38.7s → discard
+
+[13/48] second derivative
+  MRR: 0.000000 (best: 1.000000) | Time: 39.7s → discard
+
+[14/48] cosine correlation
+  MRR: 1.000000 (best: 1.000000) | Time: 39.0s → discard
+
+[15/48] step 30s
+  MRR: 0.500000 (best: 1.000000) | Time: 59.9s → discard
+
+[16/48] step 10s
+  MRR: 0.125000 (best: 1.000000) | Time: 118.9s → discard
+
+[17/48] no normalization
+  MRR: 0.014706 (best: 1.000000) | Time: 11.7s → discard
+
+[18/48] bandpass enabled
+  CRASH | Time: 9.4s
+
+[19/48] bandpass wide 5Hz
+  MRR: 0.035714 (best: 1.000000) | Time: 34.6s → discard
+
+[20/48] bandpass narrow 1Hz
+  MRR: 0.029412 (best: 1.000000) | Time: 34.6s → discard
+
+[21/48] savgol filter
+  MRR: 1.000000 (best: 1.000000) | Time: 34.8s → discard
+
+[22/48] lowpass filter
+  MRR: 0.011111 (best: 1.000000) | Time: 35.4s → discard
+
+[23/48] no filter
+  MRR: 0.045455 (best: 1.000000) | Time: 35.4s → discard
+
+[24/48] median kernel 5
+  MRR: 0.250000 (best: 1.000000) | Time: 34.5s → discard
+
+[25/48] median kernel 7
+  MRR: 0.029412 (best: 1.000000) | Time: 34.3s → discard
+
+[26/48] no outlier rejection
+  MRR: 1.000000 (best: 1.000000) | Time: 35.2s → discard
+
+[27/48] outlier zscore 2.0
+  MRR: 1.000000 (best: 1.000000) | Time: 34.3s → discard
+
+[28/48] gaussian interpolation
+  MRR: 0.125000 (best: 1.000000) | Time: 34.5s → discard
+
+[29/48] no interpolation

@@ -1,9 +1,113 @@
 {
+  "VV01_vukovic_vonta.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Vuković-Vonta conversation. Date unknown. Poor audio quality, only 37 usable ENF points. Requires separate parameter optimization.",
+    "concatenated": true,
+    "duration_s": 225.8,
+    "source": "facebook.com/padajomaske (Maske padajo)"
+  },
+  "VV02_vukovic_helbl.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Vuković-Helbl conversation. 99s, very short. Poor audio quality. Requires separate parameter optimization.",
+    "concatenated": true,
+    "duration_s": 99.2,
+    "source": "facebook.com/padajomaske (Maske padajo)"
+  },
+  "SP01_svarc_pipan_lobbying.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Švarc Pipan lobbying.",
+    "concatenated": true,
+    "duration_s": 411.7,
+    "source": "anti-corruption2026.com"
+  },
+  "SP02_svarc_pipan_geni.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Švarc Pipan / Geni.",
+    "concatenated": true,
+    "duration_s": 280.0,
+    "source": "anti-corruption2026.com"
+  },
+  "SP03_svarc_pipan_deepstate.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Švarc Pipan deep state.",
+    "concatenated": true,
+    "duration_s": 370.5,
+    "source": "anti-corruption2026.com"
+  },
+  "NZK01_zidar_klemencic_p1.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Nina Zidar Klemenčič part 1.",
+    "concatenated": true,
+    "duration_s": 246.1,
+    "source": "anti-corruption2026.com"
+  },
+  "NZK02_zidar_klemencic_p2.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Nina Zidar Klemenčič part 2.",
+    "concatenated": true,
+    "duration_s": 276.3,
+    "source": "anti-corruption2026.com"
+  },
+  "RH01_hodej_sdh.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Robert Hodej / SDH.",
+    "concatenated": true,
+    "duration_s": 187.2,
+    "source": "anti-corruption2026.com"
+  },
+  "RH02_hodej_coercion.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Robert Hodej coercion. Longest recording (490s).",
+    "concatenated": true,
+    "duration_s": 489.7,
+    "source": "anti-corruption2026.com"
+  },
+  "DP01_paravan_geni.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Paravan / Geni.",
+    "concatenated": true,
+    "duration_s": 297.0,
+    "source": "anti-corruption2026.com"
+  },
+  "TV01_vukmanovic_geni.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Vukmanović / Geni.",
+    "concatenated": true,
+    "duration_s": 357.5,
+    "source": "anti-corruption2026.com"
+  },
+  "JO01_oberstar_dars_influence.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Jože Oberstar / DARS influence.",
+    "concatenated": true,
+    "duration_s": 350.8,
+    "source": "anti-corruption2026.com"
+  },
+  "JO02_oberstar_dars_contracts.wav": {
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Oberstar / DARS contracts.",
+    "concatenated": true,
+    "duration_s": 337.9,
+    "source": "anti-corruption2026.com",
+    "same_day_group": "oberstar_dars"
+  },
   "JO03_oberstar_deep_state.wav": {
-    "known_date": "2025-10-04",
-    "known_time": "11:14",
-    "confidence": "indicative",
-    "notes": "Oberstar deep state. Segment 4 (185-238s) has 5/10 top matches from 2025. Best 2025 match: 4 Oct 2025, 11:14, r=0.952. Joint analysis with JO02 shows 2025-04-20 as 3rd best day (z=3.34). Original individual ENF best match was 2023-02-14 (z=3.16) but 2025 cannot be excluded. Using 2025-10-04 as target for optimization — if ENF pipeline can reliably surface this date, it validates the 2025 hypothesis.",
+    "known_date": null,
+    "confidence": "none",
+    "notes": "Oberstar deep state.",
     "concatenated": true,
     "duration_s": 266.8,
     "source": "anti-corruption2026.com",

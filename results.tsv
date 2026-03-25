@@ -1,0 +1,30 @@
+commit	mrr	elapsed_s	status	description
+7355563	0.000000	31.6	keep	baseline
+97f794b	0.000000	30.0	discard	100Hz only
+294e396	0.011236	30.4	keep	50Hz only
+8f19a20	0.000000	32.0	discard	50+100+150Hz
+fdfae58	0.027778	35.1	keep	FFT window 8s
+fc4132e	0.000000	20.0	discard	FFT window 32s
+c9688bf	1.000000	37.8	keep	FFT window 4s
+fe86e4d	0.050000	34.6	discard	search bandwidth 1.0Hz
+cb431d5	0.000000	4.6	crash	search bandwidth 0.2Hz
+de5644e	0.000000	18.8	crash	blackman window
+9f863fd	0.014925	34.9	discard	hamming window
+db40950	0.000000	35.9	discard	kaiser window
+80ac017	0.027027	38.7	discard	derivative correlation
+73b8258	0.000000	39.7	discard	second derivative
+2f71bed	1.000000	39.0	discard	cosine correlation
+4c6b5d8	0.500000	59.9	discard	step 30s
+7040014	0.125000	118.9	discard	step 10s
+c737294	0.014706	11.7	discard	no normalization
+9730425	0.000000	9.4	crash	bandpass enabled
+2bcefd4	0.035714	34.6	discard	bandpass wide 5Hz
+db71b81	0.029412	34.6	discard	bandpass narrow 1Hz
+e664b18	1.000000	34.8	discard	savgol filter
+7ebf510	0.011111	35.4	discard	lowpass filter
+b598c3e	0.045455	35.4	discard	no filter
+48bc361	0.250000	34.5	discard	median kernel 5
+c15f12b	0.029412	34.3	discard	median kernel 7
+e7e104c	1.000000	35.2	discard	no outlier rejection
+935db76	1.000000	34.3	discard	outlier zscore 2.0
+dd39596	0.125000	34.5	discard	gaussian interpolation
