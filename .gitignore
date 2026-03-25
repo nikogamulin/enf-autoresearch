@@ -1,21 +1,6 @@
-# Data (large files, user-provided)
-data/recordings/*.wav
-data/reference/*.csv
-data/reference/index.json
-
-# Results
-results/
-
-# Python
 __pycache__/
 *.pyc
-.venv/
+data/recordings/*.wav
+data/reference/*.csv
 *.egg-info/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Editor
-.vscode/
-.idea/
+.venv/

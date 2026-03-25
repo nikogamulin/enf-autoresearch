@@ -1,0 +1,21 @@
+{
+  "results": {
+    "mrr": 1.0,
+    "top1_acc": 1.0,
+    "top5_acc": 1.0,
+    "mean_z": 2.8568367487715776,
+    "n_evaluated": 1,
+    "details": [
+      {
+        "filename": "JO03_oberstar_deep_state.wav",
+        "known_date": "2025-10-04",
+        "rank": 1,
+        "predicted_date": "2025-10-04",
+        "predicted_score": 0.7153374597196122,
+        "z": 2.8568367487715776
+      }
+    ]
+  },
+  "elapsed_s": 34.46874976158142,
+  "timestamp": "2026-03-24T22:02:09.758313"
+}

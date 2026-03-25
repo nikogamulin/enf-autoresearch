@@ -1,0 +1,241 @@
+{
+  "title": "Forensic Analysis of Slovenian Wiretapping Recordings (2023-2026)",
+  "author": "Niko Gamulin, PhD",
+  "date": "March 2026",
+  "license": "MIT",
+  "description": "Multi-layered forensic analysis of 14 audio recordings from two Slovenian investigative journalism sources. Analysis covers signal-level authentication, ENF temporal dating, cross-recording corroboration, forensic linguistics, and content analysis.",
+  "sources": [
+    {
+      "name": "Anti-Corruption 2026",
+      "url": "https://www.anti-corruption2026.com/",
+      "recordings": [
+        "SP01",
+        "SP02",
+        "SP03",
+        "NZK01",
+        "NZK02",
+        "RH01",
+        "RH02",
+        "DP01",
+        "TV01",
+        "JO01",
+        "JO02",
+        "JO03"
+      ]
+    },
+    {
+      "name": "Maske padajo",
+      "url": "https://www.facebook.com/padajomaske",
+      "recordings": [
+        "VV01",
+        "VV02"
+      ],
+      "note": "Lower audio quality than anti-corruption2026.com recordings"
+    }
+  ],
+  "recordings": [
+    {
+      "id": "SP01",
+      "file": "SP01_svarc_pipan_lobbying.wav",
+      "duration_s": 411.7,
+      "speakers": [
+        "Dominika Svarc Pipan"
+      ],
+      "topic": "Lobbying access to PM, political pressure",
+      "segments": 7
+    },
+    {
+      "id": "SP02",
+      "file": "SP02_svarc_pipan_geni.wav",
+      "duration_s": 280.0,
+      "speakers": [
+        "Dominika Svarc Pipan"
+      ],
+      "topic": "GenI energy company influence",
+      "segments": 3
+    },
+    {
+      "id": "SP03",
+      "file": "SP03_svarc_pipan_deepstate.wav",
+      "duration_s": 370.5,
+      "speakers": [
+        "Dominika Svarc Pipan"
+      ],
+      "topic": "Deep state structures, judicial independence",
+      "segments": 8
+    },
+    {
+      "id": "NZK01",
+      "file": "NZK01_zidar_klemencic_p1.wav",
+      "duration_s": 246.1,
+      "speakers": [
+        "Nina Zidar Klemencic"
+      ],
+      "topic": "Judicial appointments, political interference",
+      "segments": 2
+    },
+    {
+      "id": "NZK02",
+      "file": "NZK02_zidar_klemencic_p2.wav",
+      "duration_s": 276.3,
+      "speakers": [
+        "Nina Zidar Klemencic"
+      ],
+      "topic": "Prosecution independence, political pressure",
+      "segments": 2
+    },
+    {
+      "id": "VV01",
+      "file": "VV01_vukovic_vonta.wav",
+      "duration_s": 225.8,
+      "speakers": [
+        "Vesna Vukovic",
+        "Matej Vonta"
+      ],
+      "topic": "Banking sector influence",
+      "segments": 2,
+      "note": "Poor audio quality, only 37 usable ENF points"
+    },
+    {
+      "id": "VV02",
+      "file": "VV02_vukovic_helbl.wav",
+      "duration_s": 99.2,
+      "speakers": [
+        "Vesna Vukovic",
+        "Helena Helbl"
+      ],
+      "topic": "Media control, editorial pressure",
+      "segments": 1,
+      "note": "Short recording"
+    },
+    {
+      "id": "RH01",
+      "file": "RH01_hodej_sdh.wav",
+      "duration_s": 187.2,
+      "speakers": [
+        "Rok Hodej"
+      ],
+      "topic": "SDH (Slovenian Sovereign Holding) influence",
+      "segments": 2
+    },
+    {
+      "id": "RH02",
+      "file": "RH02_hodej_coercion.wav",
+      "duration_s": 489.7,
+      "speakers": [
+        "Rok Hodej"
+      ],
+      "topic": "Political coercion, appointment manipulation",
+      "segments": 2
+    },
+    {
+      "id": "DP01",
+      "file": "DP01_paravan_geni.wav",
+      "duration_s": 297.0,
+      "speakers": [
+        "Dejan Paravan"
+      ],
+      "topic": "GenI energy, front company structures",
+      "segments": 2
+    },
+    {
+      "id": "TV01",
+      "file": "TV01_vukmanovic_geni.wav",
+      "duration_s": 357.5,
+      "speakers": [
+        "Tomislav Vukmanovic"
+      ],
+      "topic": "GenI energy dealings, political connections",
+      "segments": 5
+    },
+    {
+      "id": "JO01",
+      "file": "JO01_oberstar_dars_influence.wav",
+      "duration_s": 350.8,
+      "speakers": [
+        "Joze Oberstar"
+      ],
+      "topic": "DARS (motorway company) political influence",
+      "segments": 3
+    },
+    {
+      "id": "JO02",
+      "file": "JO02_oberstar_dars_contracts.wav",
+      "duration_s": 337.9,
+      "speakers": [
+        "Joze Oberstar"
+      ],
+      "topic": "DARS contract manipulation",
+      "segments": 5
+    },
+    {
+      "id": "JO03",
+      "file": "JO03_oberstar_deep_state.wav",
+      "duration_s": 266.8,
+      "speakers": [
+        "Joze Oberstar"
+      ],
+      "topic": "Deep state networks, institutional capture",
+      "segments": 5
+    }
+  ],
+  "speakers": {
+    "Dominika Svarc Pipan": {
+      "role": "Former Minister of Justice",
+      "recordings": [
+        "SP01",
+        "SP02",
+        "SP03"
+      ]
+    },
+    "Nina Zidar Klemencic": {
+      "role": "Senior Judicial Official",
+      "recordings": [
+        "NZK01",
+        "NZK02"
+      ]
+    },
+    "Vesna Vukovic": {
+      "role": "Journalist / Media Figure",
+      "recordings": [
+        "VV01",
+        "VV02"
+      ]
+    },
+    "Rok Hodej": {
+      "role": "Political Operative",
+      "recordings": [
+        "RH01",
+        "RH02"
+      ]
+    },
+    "Dejan Paravan": {
+      "role": "Business Figure",
+      "recordings": [
+        "DP01"
+      ]
+    },
+    "Tomislav Vukmanovic": {
+      "role": "Business Figure",
+      "recordings": [
+        "TV01"
+      ]
+    },
+    "Joze Oberstar": {
+      "role": "Former DARS Executive",
+      "recordings": [
+        "JO01",
+        "JO02",
+        "JO03"
+      ]
+    }
+  },
+  "enf_reference": {
+    "source": "Netztransparenz.de",
+    "url": "https://www.netztransparenz.de/de-de/Regelenergie/Daten-Regelreserve/Sekundliche-Daten",
+    "coverage": "February 2023 - March 2026",
+    "files": 38,
+    "total_size_gb": 2.6,
+    "grid": "Continental European Synchronous Area (ENTSO-E CE)"
+  }
+}

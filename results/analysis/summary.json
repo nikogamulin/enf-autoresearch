@@ -1,0 +1,513 @@
+{
+  "DP01_paravan_geni.wav": {
+    "segments": 2,
+    "enf_segments": 2,
+    "total_points": 288,
+    "best_day": "2023-04-30",
+    "best_score": 0.4495684082414251,
+    "best_times": [
+      "19:50",
+      "01:33"
+    ],
+    "z_score": 3.66,
+    "top5": [
+      {
+        "day": "2023-04-30",
+        "score": 0.4496
+      },
+      {
+        "day": "2023-07-21",
+        "score": 0.4478
+      },
+      {
+        "day": "2023-05-22",
+        "score": 0.4359
+      },
+      {
+        "day": "2023-06-25",
+        "score": 0.4342
+      },
+      {
+        "day": "2024-09-19",
+        "score": 0.4281
+      }
+    ],
+    "elapsed_s": 72.2
+  },
+  "JO01_oberstar_dars_influence.wav": {
+    "segments": 3,
+    "enf_segments": 3,
+    "total_points": 284,
+    "best_day": "2025-09-16",
+    "best_score": 0.6087374316420585,
+    "best_times": [
+      "01:28",
+      "07:33",
+      "03:11"
+    ],
+    "z_score": 3.9,
+    "top5": [
+      {
+        "day": "2025-09-16",
+        "score": 0.6087
+      },
+      {
+        "day": "2026-03-12",
+        "score": 0.6073
+      },
+      {
+        "day": "2025-12-03",
+        "score": 0.5942
+      },
+      {
+        "day": "2024-11-24",
+        "score": 0.5898
+      },
+      {
+        "day": "2025-12-09",
+        "score": 0.5882
+      }
+    ],
+    "elapsed_s": 91.6
+  },
+  "JO02_oberstar_dars_contracts.wav": {
+    "segments": 5,
+    "enf_segments": 5,
+    "total_points": 265,
+    "best_day": "2023-02-12",
+    "best_score": 0.6897499814618593,
+    "best_times": [
+      "13:05",
+      "21:17",
+      "09:31",
+      "08:07",
+      "00:28"
+    ],
+    "z_score": 3.41,
+    "top5": [
+      {
+        "day": "2023-02-12",
+        "score": 0.6897
+      },
+      {
+        "day": "2025-06-29",
+        "score": 0.6854
+      },
+      {
+        "day": "2023-05-06",
+        "score": 0.6821
+      },
+      {
+        "day": "2025-02-02",
+        "score": 0.6815
+      },
+      {
+        "day": "2023-12-08",
+        "score": 0.6806
+      }
+    ],
+    "elapsed_s": 131.5
+  },
+  "JO03_oberstar_deep_state.wav": {
+    "segments": 5,
+    "enf_segments": 5,
+    "total_points": 173,
+    "best_day": "2024-01-13",
+    "best_score": 0.7217166300858926,
+    "best_times": [
+      "01:44",
+      "15:31",
+      "12:08",
+      "10:56",
+      "09:12"
+    ],
+    "z_score": 2.82,
+    "top5": [
+      {
+        "day": "2024-01-13",
+        "score": 0.7217
+      },
+      {
+        "day": "2025-05-18",
+        "score": 0.7215
+      },
+      {
+        "day": "2025-05-10",
+        "score": 0.7179
+      },
+      {
+        "day": "2025-10-04",
+        "score": 0.7153
+      },
+      {
+        "day": "2024-10-07",
+        "score": 0.7142
+      }
+    ],
+    "elapsed_s": 173.2
+  },
+  "NZK01_zidar_klemencic_p1.wav": {
+    "segments": 2,
+    "enf_segments": 2,
+    "total_points": 224,
+    "best_day": "2024-05-05",
+    "best_score": 0.5345839342896022,
+    "best_times": [
+      "06:30",
+      "00:48"
+    ],
+    "z_score": 4.06,
+    "top5": [
+      {
+        "day": "2024-05-05",
+        "score": 0.5346
+      },
+      {
+        "day": "2023-05-21",
+        "score": 0.525
+      },
+      {
+        "day": "2024-02-19",
+        "score": 0.5169
+      },
+      {
+        "day": "2023-05-28",
+        "score": 0.5162
+      },
+      {
+        "day": "2023-04-15",
+        "score": 0.509
+      }
+    ],
+    "elapsed_s": 189.4
+  },
+  "NZK02_zidar_klemencic_p2.wav": {
+    "segments": 2,
+    "enf_segments": 2,
+    "total_points": 35,
+    "best_day": "2024-07-20",
+    "best_score": 0.906769015612804,
+    "best_times": [
+      "07:49",
+      "13:20"
+    ],
+    "z_score": 4.12,
+    "top5": [
+      {
+        "day": "2024-07-20",
+        "score": 0.9068
+      },
+      {
+        "day": "2025-06-03",
+        "score": 0.8958
+      },
+      {
+        "day": "2025-06-28",
+        "score": 0.879
+      },
+      {
+        "day": "2024-04-18",
+        "score": 0.8782
+      },
+      {
+        "day": "2024-11-14",
+        "score": 0.8776
+      }
+    ],
+    "elapsed_s": 188.9
+  },
+  "RH01_hodej_sdh.wav": {
+    "segments": 2,
+    "enf_segments": 2,
+    "total_points": 172,
+    "best_day": "2023-09-29",
+    "best_score": 0.645120473206488,
+    "best_times": [
+      "06:02",
+      "21:19"
+    ],
+    "z_score": 4.05,
+    "top5": [
+      {
+        "day": "2023-09-29",
+        "score": 0.6451
+      },
+      {
+        "day": "2023-05-24",
+        "score": 0.6365
+      },
+      {
+        "day": "2024-11-27",
+        "score": 0.6358
+      },
+      {
+        "day": "2025-08-20",
+        "score": 0.6346
+      },
+      {
+        "day": "2024-02-05",
+        "score": 0.6256
+      }
+    ],
+    "elapsed_s": 188.6
+  },
+  "RH02_hodej_coercion.wav": {
+    "segments": 2,
+    "enf_segments": 2,
+    "total_points": 371,
+    "best_day": "2023-03-26",
+    "best_score": 0.582266989667973,
+    "best_times": [
+      "18:16",
+      "18:30"
+    ],
+    "z_score": 3.9,
+    "top5": [
+      {
+        "day": "2023-03-26",
+        "score": 0.5823
+      },
+      {
+        "day": "2025-12-02",
+        "score": 0.5759
+      },
+      {
+        "day": "2026-01-31",
+        "score": 0.573
+      },
+      {
+        "day": "2023-11-20",
+        "score": 0.5726
+      },
+      {
+        "day": "2025-11-14",
+        "score": 0.5629
+      }
+    ],
+    "elapsed_s": 193.0
+  },
+  "SP01_svarc_pipan_lobbying.wav": {
+    "segments": 7,
+    "enf_segments": 7,
+    "total_points": 358,
+    "best_day": "2023-07-08",
+    "best_score": 0.7005056195142357,
+    "best_times": [
+      "20:11",
+      "18:57",
+      "05:57",
+      "13:33",
+      "23:31",
+      "02:49",
+      "04:24"
+    ],
+    "z_score": 4.02,
+    "top5": [
+      {
+        "day": "2023-07-08",
+        "score": 0.7005
+      },
+      {
+        "day": "2023-03-02",
+        "score": 0.6923
+      },
+      {
+        "day": "2023-07-21",
+        "score": 0.6911
+      },
+      {
+        "day": "2023-05-28",
+        "score": 0.6908
+      },
+      {
+        "day": "2024-11-02",
+        "score": 0.6907
+      }
+    ],
+    "elapsed_s": 532.5
+  },
+  "SP02_svarc_pipan_geni.wav": {
+    "segments": 3,
+    "enf_segments": 3,
+    "total_points": 232,
+    "best_day": "2023-06-04",
+    "best_score": 0.6174889350158859,
+    "best_times": [
+      "08:23",
+      "07:53",
+      "15:33"
+    ],
+    "z_score": 3.21,
+    "top5": [
+      {
+        "day": "2023-06-04",
+        "score": 0.6175
+      },
+      {
+        "day": "2023-02-06",
+        "score": 0.6161
+      },
+      {
+        "day": "2023-03-19",
+        "score": 0.6156
+      },
+      {
+        "day": "2023-07-03",
+        "score": 0.6153
+      },
+      {
+        "day": "2023-04-20",
+        "score": 0.6079
+      }
+    ],
+    "elapsed_s": 258.7
+  },
+  "SP03_svarc_pipan_deepstate.wav": {
+    "segments": 8,
+    "enf_segments": 8,
+    "total_points": 217,
+    "best_day": "2026-02-26",
+    "best_score": 0.7683361135867366,
+    "best_times": [
+      "07:25",
+      "23:52",
+      "20:17",
+      "01:19",
+      "03:11",
+      "23:56",
+      "09:41",
+      "18:45"
+    ],
+    "z_score": 3.06,
+    "top5": [
+      {
+        "day": "2026-02-26",
+        "score": 0.7683
+      },
+      {
+        "day": "2025-08-18",
+        "score": 0.7672
+      },
+      {
+        "day": "2025-08-12",
+        "score": 0.7643
+      },
+      {
+        "day": "2023-08-13",
+        "score": 0.7628
+      },
+      {
+        "day": "2023-08-03",
+        "score": 0.7614
+      }
+    ],
+    "elapsed_s": 600.6
+  },
+  "TV01_vukmanovic_geni.wav": {
+    "segments": 5,
+    "enf_segments": 5,
+    "total_points": 310,
+    "best_day": "2023-02-02",
+    "best_score": 0.6573436130165646,
+    "best_times": [
+      "02:54",
+      "21:11",
+      "02:22",
+      "21:04",
+      "07:08"
+    ],
+    "z_score": 3.66,
+    "top5": [
+      {
+        "day": "2023-02-02",
+        "score": 0.6573
+      },
+      {
+        "day": "2025-10-22",
+        "score": 0.6538
+      },
+      {
+        "day": "2023-07-26",
+        "score": 0.6427
+      },
+      {
+        "day": "2023-07-23",
+        "score": 0.642
+      },
+      {
+        "day": "2024-05-15",
+        "score": 0.6416
+      }
+    ],
+    "elapsed_s": 395.4
+  },
+  "VV01_vukovic_vonta.wav": {
+    "segments": 2,
+    "enf_segments": 2,
+    "total_points": 37,
+    "best_day": "2024-07-06",
+    "best_score": 0.9094224266340695,
+    "best_times": [
+      "16:13",
+      "05:19"
+    ],
+    "z_score": 2.92,
+    "top5": [
+      {
+        "day": "2024-07-06",
+        "score": 0.9094
+      },
+      {
+        "day": "2023-12-08",
+        "score": 0.9066
+      },
+      {
+        "day": "2025-12-10",
+        "score": 0.9065
+      },
+      {
+        "day": "2026-02-03",
+        "score": 0.9021
+      },
+      {
+        "day": "2024-04-10",
+        "score": 0.9006
+      }
+    ],
+    "elapsed_s": 188.7
+  },
+  "VV02_vukovic_helbl.wav": {
+    "segments": 1,
+    "enf_segments": 1,
+    "total_points": 95,
+    "best_day": "2025-11-14",
+    "best_score": 0.6789419163842946,
+    "best_times": [
+      "03:14"
+    ],
+    "z_score": 3.71,
+    "top5": [
+      {
+        "day": "2025-11-14",
+        "score": 0.6789
+      },
+      {
+        "day": "2023-06-14",
+        "score": 0.6724
+      },
+      {
+        "day": "2023-07-07",
+        "score": 0.6699
+      },
+      {
+        "day": "2025-05-04",
+        "score": 0.6559
+      },
+      {
+        "day": "2024-06-13",
+        "score": 0.63
+      }
+    ],
+    "elapsed_s": 120.2
+  }
+}

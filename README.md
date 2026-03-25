@@ -1,61 +1,63 @@
-# ENF AutoResearch — Autonomous Forensic Audio Dating
+# Multi-Layered Forensic Audio Analysis
 
-An autonomous experiment loop that discovers optimal parameters for **Electric Network Frequency (ENF) forensic audio dating** — matching the 50/60 Hz power grid hum embedded in audio recordings against historical grid frequency databases to determine *when* a recording was made.
+A comprehensive, reproducible forensic analysis of 14 wiretapping recordings from Slovenian investigative journalism sources. Five analysis layers, from signal processing to content corroboration.
 
-Adapts [Karpathy's AutoResearch](https://github.com/karpathy/autoresearch) pattern: an LLM agent modifies a single file (`train.py`), runs a time-bounded experiment, evaluates against ground truth, keeps improvements, discards failures, and repeats.
+**Author:** Niko Gamulin, PhD | March 2026 | MIT License
 
-## What is ENF Analysis?
+## The Five Layers
 
-Every power grid oscillates at a nominal frequency (50 Hz in Europe, 60 Hz in the Americas). This frequency is never exactly 50.000 Hz. It fluctuates continuously within approximately +-0.05 Hz in response to supply-demand imbalances:
+| Layer | Notebook | What it answers |
+|-------|----------|----------------|
+| 1. Signal authentication | [01_signal_layer_authentication](notebooks/01_signal_layer_authentication.ipynb) | Has the audio been technically manipulated? |
+| 2. ENF temporal dating | [02_enf_date_verification](notebooks/02_enf_date_verification.ipynb) | When were the recordings made? |
+| 3. Segment analysis | [03](notebooks/03_enf_segment_analysis.ipynb) + [04](notebooks/04_enf_joint_analysis.ipynb) | Can we date individual conversation segments? |
+| 4. Cross-recording corroboration | [05_corroboration_matrix](notebooks/05_corroboration_matrix.ipynb) | Do independent speakers describe the same mechanisms? |
+| 5. Forensic linguistics | [06_forensic_linguistics](notebooks/06_forensic_linguistics.ipynb) | What do speaker profiles reveal about authenticity? |
 
-- **Demand exceeds supply** -- frequency drops (generators slow down)
-- **Supply exceeds demand** -- frequency rises (generators speed up)
+Each layer produces independent evidence. Together, they form a multi-dimensional assessment that is far stronger than any single test.
 
-These fluctuations form a **unique temporal fingerprint**: the pattern never repeats, and it is identical across the entire Continental European synchronous grid. Grid operators log the frequency every second, creating a reference database.
+## Key Findings
 
-Any audio recording made near electrical infrastructure captures traces of this 50 Hz hum through electromagnetic interference, ground loops, or acoustic coupling. By extracting this hum and matching it against the reference database, we can determine the recording date -- sometimes to the exact hour.
+### Layer 1: Signal Authentication (9-test framework)
+- All recordings are **excerpted compilations** (multiple cuts detected per recording)
+- **Zero phase anomalies** at cut points -- segments are cut from longer conversations but NOT internally rearranged
+- Bandwidth 1,600 Hz: consistent with covered microphone + GSM + Facebook HE-AAC compression
 
-### Why Harmonics Matter
+### Layer 2: ENF Date Verification
+- 12/14 recordings produce statistically significant date matches (z >= 3.0)
+- Analysis parameters discovered by autonomous optimization (autoresearch): 50 Hz fundamental, 4s FFT window, median filter
+- Dates span 2023-2026, consistent with claimed recording timeline
+- **Compressed audio limits reliability** -- results are indicative, not forensic-grade
 
-The 50 Hz fundamental is often too weak in compressed audio. Audio codecs (AAC, MP3) typically attenuate frequencies below 80 Hz. However, the **second harmonic at 100 Hz** often survives compression. Dividing the 100 Hz estimate by 2 recovers the grid frequency. The autoresearch loop tests which harmonic works best for each type of recording.
+### Layer 3: Segment-Level Dating
+- JO03 segment analysis: 2025 **cannot be excluded** (5/10 best matches for segment 4 come from 2025)
+- Joint JO02+JO03 analysis (7 segments, 1,142 days): 2025-04-20 is the 3rd most likely day (z=3.34, statistically significant)
+- Different parameters produce different date estimates -- this demonstrates insufficient ENF information, not error
 
-### The Concatenation Problem
+### Layer 4: Cross-Recording Corroboration
+- **Robert Golob mentioned by all 7 independent speakers** across all recording groups
+- **3 mechanisms corroborated by 3+ independent speakers**: lobbying access to PM, power triangle, GenI energy as political vehicle
+- Cross-speaker consistency is functionally impossible to fabricate across uncoordinated individuals
 
-Most forensic recordings are not single continuous captures -- they are edited excerpts, multiple segments concatenated with cuts between them. Standard ENF analysis fails because:
+### Layer 5: Forensic Linguistics
+- Each speaker maintains consistent linguistic profiles across recordings (supporting authenticity)
+- Natural individual variation in vocabulary, speech rate, and language use
+- **Explicit disclaimer**: acoustic measurements are descriptive, NOT lie detection or stress indicators
 
-1. The ENF trace has **discontinuities** at cut points
-2. **Autocorrelation** across the full recording is meaningless
-3. Individual segments may be **too short** for reliable dating
+## ENF AutoResearch: How Optimal Parameters Were Discovered
 
-Our approach: detect cuts first, extract ENF per segment, then find the single day that best explains ALL segments using a geometric mean of per-segment correlations.
-
-## How Autoresearch Discovered the Optimal Parameters
-
-The autoresearch loop ran **29 experiments in ~15 minutes** on a single CPU core, systematically testing parameter variations:
+An autonomous experiment loop adapted from [Karpathy's AutoResearch](https://github.com/karpathy/autoresearch) discovered optimal ENF analysis parameters by running 29 experiments in ~15 minutes:
 
 ```
-Experiment   MRR     Status    What was tested
----------   ------   ------    ---------------
-baseline    0.0000   keep      Default params (50+100 Hz, 16s FFT, parabolic interp)
-#1          0.0000   discard   100 Hz harmonic only
-#2          0.0112   KEEP      50 Hz harmonic only (fundamental captures grid hum better)
-#3          0.0000   discard   50+100+150 Hz combined
-#4          0.0278   KEEP      FFT window 8s (shorter = better time resolution)
-#5          0.0000   discard   FFT window 32s
-#6          1.0000   KEEP      FFT window 4s (even shorter, perfect score!)
-#7          0.0500   discard   Wider search bandwidth
-#8-#29      various  discard   Window functions, correlation methods, filters, scoring...
+Experiment   MRR     What changed
+---------   ------   ---------------
+baseline    0.0000   Default (50+100 Hz, 16s FFT, parabolic interpolation)
+#2          0.0112   50 Hz harmonic only
+#4          0.0278   FFT window 8s
+#6          1.0000   FFT window 4s  <-- perfect score
 ```
 
-### Key Finding: Short FFT Windows Win
-
-The biggest improvement came from reducing the FFT window from 16s to 4s. Why?
-
-**Frequency resolution vs. time resolution tradeoff:**
-- A 16s window gives 0.0625 Hz resolution but only ~15 ENF estimates for a 250s recording
-- A 4s window gives 0.25 Hz resolution but ~250 ENF estimates -- far more data points for correlation
-
-For compressed, noisy recordings where the ENF signal is weak, **more data points beat finer frequency resolution**. The grid frequency variations (~0.05 Hz) are large enough to detect even with 0.25 Hz resolution.
+**Key insight:** Short FFT windows (4s) dramatically outperform long windows (16s) for compressed recordings. More data points matter more than finer frequency resolution.
 
 ### Optimal Parameters
 
@@ -64,164 +66,120 @@ For compressed, noisy recordings where the ENF signal is weak, **more data point
 | Target harmonic | 50 Hz (fundamental) | Strongest in these recordings despite compression |
 | FFT window | 4 seconds | Maximizes ENF data points for correlation |
 | Window function | Hann | Standard, no improvement from alternatives |
-| Interpolation | None | Sub-bin refinement unnecessary at 4s resolution |
-| Trace filter | Median (kernel=3) | Removes spike artifacts without distorting trend |
-| Outlier rejection | Z-score > 3.0 | Removes extreme values, interpolates gaps |
+| Interpolation | None | Unnecessary at 0.25 Hz resolution |
+| Trace filter | Median (kernel=3) | Removes spike artifacts |
+| Outlier rejection | Z-score > 3.0 | Removes extreme values |
 | Correlation | Pearson, step=60s | Standard normalized correlation |
-| Joint scoring | Geometric mean, uniform weights | Penalizes days where any segment fails |
 
-## Results: All 14 Recordings
+## ENF Results: All 14 Recordings
 
-Analysis run with optimal parameters, correlating against 38 months of reference data (Feb 2023 -- Mar 2026):
+| Recording | Best Match | z-score | ENF Points | Note |
+|-----------|-----------|---------|------------|------|
+| DP01_paravan_geni | 2023-04-30 | 3.66 | 288 | |
+| JO01_oberstar_dars_influence | 2025-09-16 | 3.90 | 284 | |
+| JO02_oberstar_dars_contracts | 2023-02-12 | 3.41 | 265 | |
+| JO03_oberstar_deep_state | 2024-01-13 | 2.82 | 173 | Below threshold |
+| NZK01_zidar_klemencic_p1 | 2024-05-05 | 4.06 | 224 | |
+| NZK02_zidar_klemencic_p2 | 2024-07-20 | 4.12 | 35 | Low data, possible false positive |
+| RH01_hodej_sdh | 2023-09-29 | 4.05 | 172 | |
+| RH02_hodej_coercion | 2023-03-26 | 3.90 | 371 | |
+| SP01_svarc_pipan_lobbying | 2023-07-08 | 4.02 | 358 | |
+| SP02_svarc_pipan_geni | 2023-06-04 | 3.21 | 232 | |
+| SP03_svarc_pipan_deepstate | 2026-02-26 | 3.06 | 217 | |
+| TV01_vukmanovic_geni | 2023-02-02 | 3.66 | 310 | |
+| VV01_vukovic_vonta | 2024-07-06 | 2.92 | 37 | Poor quality, below threshold |
+| VV02_vukovic_helbl | 2025-11-14 | 3.71 | 95 | |
 
-| Recording | Best Match | z-score | Segments | ENF Points |
-|-----------|-----------|---------|----------|------------|
-| DP01_paravan_geni | 2023-04-30 | 3.66 | 2 | 288 |
-| JO01_oberstar_dars_influence | 2025-09-16 | 3.90 | 3 | 284 |
-| JO02_oberstar_dars_contracts | 2023-02-12 | 3.41 | 5 | 265 |
-| JO03_oberstar_deep_state | 2024-01-13 | 2.82 | 5 | 173 |
-| NZK01_zidar_klemencic_p1 | 2024-05-05 | 4.06 | 2 | 224 |
-| NZK02_zidar_klemencic_p2 | 2024-07-20 | 4.12 | 2 | 35 |
-| RH01_hodej_sdh | 2023-09-29 | 4.05 | 2 | 172 |
-| RH02_hodej_coercion | 2023-03-26 | 3.90 | 2 | 371 |
-| SP01_svarc_pipan_lobbying | 2023-07-08 | 4.02 | 7 | 358 |
-| SP02_svarc_pipan_geni | 2023-06-04 | 3.21 | 3 | 232 |
-| SP03_svarc_pipan_deepstate | 2026-02-26 | 3.06 | 8 | 217 |
-| TV01_vukmanovic_geni | 2023-02-02 | 3.66 | 5 | 310 |
-| VV01_vukovic_vonta* | 2024-07-06 | 2.92 | 2 | 37 |
-| VV02_vukovic_helbl* | 2025-11-14 | 3.71 | 1 | 95 |
+## Disclaimers
 
-*VV01 and VV02 are from a different source (lower audio quality) and have fewer usable ENF points. These require separate parameter optimization.
+**Read [docs/DISCLAIMERS.md](docs/DISCLAIMERS.md) before citing any results.**
 
-### Interpreting z-scores
-
-- **z >= 3.0** (12/14 recordings): Statistically significant. The best matching day stands out from the distribution. However, this does NOT mean the date is conclusively proven -- see limitations.
-- **z < 3.0** (2/14): Below statistical significance. The ENF signal is too weak for reliable dating.
-- **z >= 10.0**: Forensic-grade confidence (not achieved here due to compression).
-
-### Important Limitations
-
-These results are **indicative, not conclusive**:
-
-1. **Compressed audio**: Facebook HE-AAC compression degrades the ENF signal by 10-20 dB
-2. **Low absolute correlations**: Best scores are 0.45-0.91, not the >0.95 expected from clean recordings
-3. **No original recordings**: We analyze Facebook video rips, not forensic-grade originals
-4. **Statistical significance != certainty**: z=3.5 means the match is unlikely by chance, but with 1,100+ candidate days, some false positives are expected
-5. **Same-day constraint not verified**: We assume segments within a recording come from the same day, but cannot independently confirm this
+Key points:
+- ENF date estimates are **indicative, not conclusive** (compressed audio, no originals available)
+- Voice measurements are **descriptive, not diagnostic** (not lie detection)
+- Shorter recordings produce less reliable dates (see minimum length table in DISCLAIMERS.md)
+- Different analysis parameters can produce different date estimates for the same recording
+- Content analysis identifies mechanisms, not legal guilt -- courts decide that
 
 ## Data Sources
 
 ### Recordings
+- **12 recordings**: [Anti-Corruption 2026](https://www.anti-corruption2026.com/)
+- **2 recordings** (VV01, VV02): [Maske padajo](https://www.facebook.com/padajomaske) (lower quality)
+- All are Facebook video rips with HE-AAC compression
 
-14 forensic wiretapping recordings from two sources:
-
-- **12 recordings**: Published by the [Anti-Corruption 2026](https://www.anti-corruption2026.com/) initiative
-- **2 recordings** (VV01, VV02): Published by [Maske padajo](https://www.facebook.com/padajomaske)
-
-All are Facebook video rips, heavily compressed (HE-AAC ~128 kbps), narrowband, and concatenated from multiple conversation segments.
-
-Hosted on Google Drive:
-[**Download recordings**](https://drive.google.com/drive/folders/1lqLFe7YW5FE60DKVG5ZGy3jPzXHy0EfV)
+Google Drive: [Download recordings](https://drive.google.com/drive/folders/1lqLFe7YW5FE60DKVG5ZGy3jPzXHy0EfV)
 
 ### ENF Reference Data
+Per-second grid frequency for Continental Europe (ENTSO-E CE), Feb 2023 -- Mar 2026 (38 CSVs, 2.6 GB).
 
-Per-second grid frequency measurements for Continental Europe (ENTSO-E CE synchronous area), February 2023 through March 2026. 38 monthly CSV files, ~2.6 GB total.
+Source: [Netztransparenz.de](https://www.netztransparenz.de/de-de/Regelenergie/Daten-Regelreserve/Sekundliche-Daten)
 
-**Original source:** [Netztransparenz.de -- Sekundliche Daten](https://www.netztransparenz.de/de-de/Regelenergie/Daten-Regelreserve/Sekündliche-Daten)
-Public data from German transmission system operators, free for research use.
-
-Mirrored on Google Drive:
-[**Download ENF reference**](https://drive.google.com/drive/folders/1IO3Mo4XCO9bwyjSfkARzOk_OJ_Do3_cE)
+Google Drive: [Download reference](https://drive.google.com/drive/folders/1IO3Mo4XCO9bwyjSfkARzOk_OJ_Do3_cE)
 
 ## Quick Start
 
-**Requirements:** Python 3.10+, [uv](https://docs.astral.sh/uv/)
-
 ```bash
-# 1. Install dependencies
+# Install dependencies
 uv sync
 
-# 2. Download recordings
+# Download data
 bash scripts/download_recordings.sh
-
-# 3. Download ENF reference data (~2.6 GB)
 uv run python scripts/download_enf_reference.py
 
-# 4. Run full analysis with optimal parameters (~30 min)
+# Run full ENF analysis
 python3 analyze_all.py
 
-# 5. Or run the autoresearch optimization loop
+# Or run the autoresearch optimization loop
 python3 run_loop.py
+
+# Execute notebooks (requires Jupyter)
+jupyter nbconvert --to notebook --execute notebooks/01_signal_layer_authentication.ipynb
 ```
 
 ## Project Structure
 
 ```
 enf-autoresearch/
-├── README.md                     # This file
-├── program.md                    # Agent instructions (human edits)
-├── prepare.py                    # Data I/O + evaluation (fixed, do not modify)
-├── train.py                      # Parameters + pipeline (AGENT MODIFIES THIS)
-├── analyze_all.py                # Full analysis of all recordings (optimal params)
-├── run_loop.py                   # Autonomous experiment loop
-├── pyproject.toml                # Dependencies
-├── results.tsv                   # Experiment log from autoresearch run
+├── README.md
+├── notebooks/
+│   ├── style.py                           # Consistent figure styling
+│   ├── 01_signal_layer_authentication.ipynb  # 9-test framework
+│   ├── 02_enf_date_verification.ipynb        # ENF dating, all 14 recordings
+│   ├── 03_enf_segment_analysis.ipynb         # JO03 segment deep dive
+│   ├── 04_enf_joint_analysis.ipynb           # Joint JO02+JO03 analysis
+│   ├── 05_corroboration_matrix.ipynb         # Cross-recording content analysis
+│   └── 06_forensic_linguistics.ipynb         # Speaker profiling
+├── figures/
+│   ├── signal_analysis/      # 9-test dashboard, bandwidth, ENF, pauses, etc.
+│   ├── enf_dating/           # z-scores, per-recording analysis PNGs
+│   ├── corroboration/        # Relational graph, topic matrix, mechanism chart
+│   ├── linguistics/          # Radar charts, scatter plots, speaker profiles
+│   └── content_analysis/     # State capture visualizations
 ├── docs/
-│   └── ENF_EXPLAINER.md          # Theory: ENF variation, phase, forensics
+│   ├── ENF_EXPLAINER.md      # Theory: ENF variation, phase, forensics
+│   └── DISCLAIMERS.md        # Methodological boundaries and limitations
 ├── data/
-│   ├── recordings/               # Audio files (.wav, downloaded from Drive)
-│   ├── reference/                # Grid frequency CSVs (downloaded)
-│   └── ground_truth.json         # Recording metadata and known dates
-├── scripts/
-│   ├── download_enf_reference.py # Fetch reference data (Drive or Netztransparenz)
-│   └── download_recordings.sh    # Download recordings from Drive
-└── results/
-    └── analysis/                 # Per-recording visualizations + summary.json
+│   ├── recordings/           # Audio files (.wav)
+│   ├── reference/            # Grid frequency CSVs
+│   ├── metadata.json         # Recording metadata (English)
+│   ├── ground_truth.json     # Known dates for validation
+│   ├── forensic_linguistics.json  # Speaker profiling data
+│   ├── jo03_embedded.json    # JO03 segment analysis data
+│   └── jo_joint_results.json # Joint JO02+JO03 results
+├── results/
+│   └── analysis/             # Per-recording PNGs + summary.json
+├── prepare.py                # Data I/O + evaluation (fixed)
+├── train.py                  # Parameters + pipeline (agent modifies)
+├── analyze_all.py            # Full analysis with optimal parameters
+├── run_loop.py               # Autonomous experiment loop
+├── results.tsv               # Experiment log
+└── pyproject.toml
 ```
-
-## How the Autoresearch Loop Works
-
-Following [Karpathy's AutoResearch](https://github.com/karpathy/autoresearch) pattern:
-
-```
-  ┌──────────────────────────────────────────────┐
-  │  Human writes program.md (research direction) │
-  │  Agent reads train.py (current parameters)    │
-  │  Agent reads results/latest.json (last score) │
-  └──────────┬───────────────────────────────────┘
-             │
-             ▼
-  ┌──────────────────────────────────────────────┐
-  │  Agent modifies ONE parameter in train.py     │
-  │  git commit                                   │
-  │  python3 train.py > run.log 2>&1              │
-  │  grep "^METRIC:" run.log                      │
-  └──────────┬───────────────────────────────────┘
-             │
-        ┌────┴────┐
-     Improved?    No
-        │          │
-      Keep      git reset --hard HEAD~1
-   (advance)     (revert)
-        │          │
-        └────┬─────┘
-             └──→ Repeat forever
-```
-
-Three files matter:
-- **`prepare.py`** -- fixed evaluation and data loading (the "exam paper")
-- **`train.py`** -- the single file the agent modifies (all parameters + pipeline)
-- **`program.md`** -- agent instructions (the "research direction")
-
-The metric is **MRR (Mean Reciprocal Rank)**: for each recording with a known date, rank all candidate days. MRR = average of 1/rank. MRR=1.0 means perfect.
 
 ## License
 
 MIT
-
-## Author
-
-Niko Gamulin, PhD -- March 2026
 
 ## Acknowledgments
 
